@@ -25,5 +25,5 @@ https://discord.com/api/oauth2/authorize?client_id=1165327775708749915&permissio
 
 `!help` - Lists all the commands you can use with The Experiment.
 
-`!invite` - Sends the invite link for The Experiment.
+`!invite` - Sends a discord bot invite link for The Experiment.
 

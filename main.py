@@ -28,7 +28,8 @@ class MyClient(discord.Client):
                         "`!randomgif` - Sends a random gif from The Experiment's curated collection.", 
                         "`!addgif` - Adds a GIF to The Experiment's curated collection.", 
                         "`!removegif` - Removes a GIF from The Experiment's curated collection.", 
-                        "`!help` - Lists all the commands you can use with The Experiment."]
+                        "`!help` - Lists all the commands you can use with The Experiment.",
+                        "`!invite` - Sends a discord bot invite link for The Experiment."]
             reply = []
             for item in help_list:
                 reply.append(item + '\n')
