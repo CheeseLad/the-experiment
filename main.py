@@ -26,8 +26,8 @@ class MyClient(discord.Client):
             print(f"{message.author} used '!help'")
             help_list = ["The Experiment - Commands List\n",
                         "`!randomgif` - Sends a random gif from The Experiment's curated collection.", 
-                        "`!addgif` - Adds a GIF to The Experiment's curated collection.", 
-                        "`!removegif` - Removes a GIF from The Experiment's curated collection.", 
+                        "`!addgif [link]` - Adds a GIF to The Experiment's curated collection.", 
+                        "`!removegif [link]` - Removes a GIF from The Experiment's curated collection.", 
                         "`!help` - Lists all the commands you can use with The Experiment.",
                         "`!invite` - Sends a discord bot invite link for The Experiment."]
             reply = []

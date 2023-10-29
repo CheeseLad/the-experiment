@@ -19,9 +19,9 @@ https://discord.com/api/oauth2/authorize?client_id=1165327775708749915&permissio
 
 `!randomgif` - Sends a random gif from The Experiment's curated collection.
 
-`!addgif` - Adds a GIF to The Experiment's curated collection.
+`!addgif [link]` - Adds a GIF to The Experiment's curated collection.
 
-`!removegif` - Removes a GIF from The Experiment's curated collection.
+`!removegif [link]` - Removes a GIF from The Experiment's curated collection.
 
 `!help` - Lists all the commands you can use with The Experiment.
 
