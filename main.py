@@ -8,6 +8,9 @@ import json
 import sqlite3
 from config import token
 
+if not os.path.exists('gifs.txt'):
+    open('gifs.txt', 'w').close()
+
 class MyClient(discord.Client):
     async def on_ready(self):
         print(f'Logged in as {self.user} (ID: {self.user.id})')
