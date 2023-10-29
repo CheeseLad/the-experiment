@@ -40,13 +40,19 @@ class MyClient(discord.Client):
             print(f"{message.author} used '!randomgif'")
             gifs = []
             with open('gifs.txt', 'r') as f:
-                for line in f:
+                if len(f.readlines()) == 0:
+                    await message.reply("The Experiement's curated collection is empty. Add some GIFs with `!addgif [link]`", mention_author=True)
+                    return
+                for line in f.readlines():
                   gifs.append(line.strip())
             response = random.choice(gifs)
             await message.reply(f'{response}', mention_author=True)
 
         if  message.content.startswith('!addgif'):
             print(f"{message.author} used '!addgif'")
+            if len(message.content.split()) <= 1:
+                await message.reply("Please specify a GIF to add to The Experiement's curated collection.", mention_author=True)
+                return
             response = message.content.split()[1]
             gifs = []
             with open('gifs.txt', 'r') as f:
@@ -63,9 +69,15 @@ class MyClient(discord.Client):
 
         if message.content.startswith('!removegif'):
             print(f"{message.author} used '!removegif'")
+            if len(message.content.split()) <= 1:
+                await message.reply("Please specify a GIF to remove from The Experiement's curated collection.", mention_author=True)
+                return
             response = message.content.split()[1]
             gifs = []
             with open('gifs.txt', 'r') as f:
+                if len(f.readlines()) == 0:
+                    await message.reply("The Experiement's curated collection is empty. Add some GIFs with `!addgif [link]`", mention_author=True)
+                    return
                 for line in f.readlines():
                   gifs.append(line.strip())
             if response in gifs:
