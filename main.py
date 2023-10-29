@@ -34,7 +34,9 @@ class MyClient(discord.Client):
                 reply.append(item + '\n')
             await message.reply(f"{''.join(reply)}", mention_author=True)
 
-
+        if message.content.startswith('!invite'):
+            print(f"{message.author} used '!invite'")
+            await message.reply("Invite The Experiment to your server by using this link:\n\nhttps://discord.com/api/oauth2/authorize?client_id=1165327775708749915&permissions=274877990912&scope=bot", mention_author=True)
 
         if  message.content.startswith('!randomgif'):
             print(f"{message.author} used '!randomgif'")
@@ -88,9 +90,7 @@ class MyClient(discord.Client):
                 await message.reply("Removed that GIF from to The Experiement's curated collection successfully.", mention_author=True)
             else:
                 await message.reply("That GIF was not found in The Experiement's curated collection.", mention_author=True)
-                    
-
-
+                
 intents = discord.Intents.default()
 intents.message_content = True
 intents.members = True
