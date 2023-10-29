@@ -8,17 +8,20 @@ https://discord.com/api/oauth2/authorize?client_id=1165327775708749915&permissio
 
 ## Bot Permissions:
 `Send Messages` - Allows The Experiment to send messages.
+
 `Send Messages in Threads` - Allows The Experiment to send messages in threads.
+
 `Embed Links` - Allows The Experiment to send GIFs.
+
 `Read Message History` - Allows The Experiment to read the GIF you input.
 
-## Bot Prefix:
-`!`
-
 ## Bot Commands:
-```
+
 `!randomgif` - Sends a random gif from The Experiment's curated collection.
+
 `!addgif` - Adds a GIF to The Experiment's curated collection.
+
 `!removegif` - Removes a GIF from The Experiment's curated collection.
+
 `!help` - Lists all the commands you can use with The Experiment.
-```
+
