@@ -41,15 +41,16 @@ class MyClient(discord.Client):
 
         if  message.content.startswith('!randomgif'):
             print(f"{message.author} used '!randomgif'")
-            gifs = []
             with open('gifs.txt', 'r') as f:
-                if len(f.readlines()) == 0:
+                gifs = []
+                for line in f.readlines():
+                    gifs.append(line.strip())
+                if len(gifs) == 0:
                     await message.reply("The Experiement's curated collection is empty. Add some GIFs with `!addgif [link]`", mention_author=True)
                     return
-                for line in f.readlines():
-                  gifs.append(line.strip())
-            response = random.choice(gifs)
-            await message.reply(f'{response}', mention_author=True)
+                else:
+                  response = random.choice(gifs)
+                  await message.reply(f'{response}', mention_author=True)
 
         if  message.content.startswith('!addgif'):
             print(f"{message.author} used '!addgif'")
