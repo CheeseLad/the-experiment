@@ -77,21 +77,24 @@ class MyClient(discord.Client):
                 await message.reply("Please specify a GIF to remove from The Experiement's curated collection.", mention_author=True)
                 return
             response = message.content.split()[1]
-            gifs = []
             with open('gifs.txt', 'r') as f:
-                if len(f.readlines()) == 0:
+                gifs = []
+                for line in f.readlines():
+                    gifs.append(line.strip())
+                if len(gifs) == 0:
                     await message.reply("The Experiement's curated collection is empty. Add some GIFs with `!addgif [link]`", mention_author=True)
                     return
-                for line in f.readlines():
-                  gifs.append(line.strip())
-            if response in gifs:
-                gifs.remove(response)
-                with open('gifs.txt', 'w') as f:
-                    for gif in gifs:
-                        f.write(gif + '\n')
-                await message.reply("Removed that GIF from to The Experiement's curated collection successfully.", mention_author=True)
-            else:
-                await message.reply("That GIF was not found in The Experiement's curated collection.", mention_author=True)
+                else:
+                    for line in f.readlines():
+                        gifs.append(line.strip())
+                    if response in gifs:
+                        gifs.remove(response)
+                        with open('gifs.txt', 'w') as f:
+                            for gif in gifs:
+                                f.write(gif + '\n')
+                            await message.reply("Removed that GIF from to The Experiement's curated collection successfully.", mention_author=True)
+                    else:
+                        await message.reply("That GIF was not found in The Experiement's curated collection.", mention_author=True)
                 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -99,4 +102,3 @@ intents.members = True
 
 client = MyClient(intents=intents)
 client.run(token)
-

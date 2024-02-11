@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  the-experiment:
+    container_name: the-experiment
+    hostname: the-experiment
+    restart: unless-stopped
+    build: .
+    volumes:
+      - ./app:/app
